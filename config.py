@@ -58,12 +58,14 @@ TOPICS_BY_GRADE: Dict[str, List[str]] = {
 ROLE_LABELS: Dict[str, str] = {
     "backend": "Backend Developer",
     "frontend": "Frontend Developer",
+    "product_manager": "Product Manager",
     "devops": "DevOps / SRE",
     "qa": "QA Engineer",
     "data_engineer": "Data Engineer",
     "data_science": "Data Scientist",
     "ml_engineer": "ML Engineer",
-    "mobile": "Mobile Developer"
+    "mobile": "Mobile Developer",
+    "solution_architect": "Solution Architect"
 }
 
 ROLE_KEYWORDS: Dict[str, List[str]] = {
@@ -74,7 +76,20 @@ ROLE_KEYWORDS: Dict[str, List[str]] = {
     "data_engineer": ["data engineer", "data engineering", "etl", "dwh", "warehouse", "airflow", "spark"],
     "data_science": ["data scientist", "data science", "аналит", "analysis", "статист", "statistics"],
     "ml_engineer": ["ml engineer", "machine learning", "mlops", "model serving", "inference"],
-    "mobile": ["mobile", "android", "ios", "swift", "kotlin", "react native", "flutter"]
+    "mobile": ["mobile", "android", "ios", "swift", "kotlin", "react native", "flutter"],
+    "product_manager": [
+        "product", "product manager", "pm", "roadmap", "user story",
+        "backlog", "jira", "confluence", "agile", "scrum", "kanban",
+        "kpi", "okr", "metrics", "ux", "ui", "customer journey",
+        "stakeholder", "feature prioritization", "a/b testing", "mvp", "market research"
+    ],
+    "solution_architect": [
+        "solution architect", "architect", "architecture", "system design",
+        "high-level design", "hld", "lld", "microservices", "monolith",
+        "integration", "enterprise", "scalability", "availability",
+        "cloud architecture", "aws", "azure", "gcp",
+        "non-functional requirements", "nfr", "trade-offs"
+    ]
 }
 
 
@@ -189,7 +204,71 @@ TOPICS_BY_ROLE_AND_DIFFICULTY: Dict[str, Dict[int, List[str]]] = {
         ,
         9: ["сложные интеграции", "декомпозиция", "масштабирование"],
         10: ["системный дизайн", "стандарты", "leadership"]
-    }
+    },
+    "product_manager": {
+        1: ["роль PM и базовые обязанности", "жизненный цикл продукта", "основы Agile и Scrum"],
+        2: ["сбор требований", "backlog и user stories", "основы UX/UI для PM"],
+        3: ["приоритизация задач (MoSCoW, RICE)", "работа с командой разработчиков", "метрики успеха продукта (KPI, OKR)"],
+        4: ["планирование спринтов и релизов", "проведение интервью с пользователями", "анализ конкурентов"],
+        5: ["roadmap продукта", "A/B тестирование", "управление рисками и зависимостями"],
+        6: ["монетизация и бизнес-модели", "продуктовые гипотезы", "разработка MVP и PoC"],
+        7: ["управление несколькими продуктами", "метрики роста и удержания (DAU/MAU, churn)", "customer journey mapping"],
+        8: ["стратегия продукта и vision", "управление портфелем продуктов", "взаимодействие с C-level и стейкхолдерами"],
+        9: ["масштабирование продукта и команды", "международные рынки и локализация", "корпоративная культура и стандарты процессов"],
+        10: ["системный продуктовый дизайн", "лидерство в организации", "инновации и долгосрочная стратегия"]
+    },
+"solution_architect": {
+    1: [
+        "роль solution architect",
+        "SDLC и участники процесса",
+        "базовые IT-системы и компоненты"
+    ],
+    2: [
+        "базовый системный дизайн",
+        "HTTP, API и интеграции",
+        "монолит vs микросервисы"
+    ],
+    3: [
+        "нефункциональные требования (NFR)",
+        "масштабируемость и производительность",
+        "основы облаков (IaaS/PaaS/SaaS)"
+    ],
+    4: [
+        "интеграционные паттерны",
+        "event-driven архитектура",
+        "CAP теорема"
+    ],
+    5: [
+        "безопасность архитектуры",
+        "аутентификация и авторизация",
+        "данные и согласованность"
+    ],
+    6: [
+        "high-level design (HLD)",
+        "low-level design (LLD)",
+        "trade-offs и технические решения"
+    ],
+    7: [
+        "cloud architecture (AWS/Azure/GCP)",
+        "resilience patterns",
+        "cost optimization"
+    ],
+    8: [
+        "enterprise architecture",
+        "domain-driven design",
+        "миграции и legacy"
+    ],
+    9: [
+        "архитектура распределённых систем",
+        "SLA/SLO/SLI",
+        "observability и reliability"
+    ],
+    10: [
+        "системный дизайн end-to-end",
+        "архитектурное лидерство",
+        "технологическая стратегия"
+    ]    }
+
 }
 
 
@@ -238,6 +317,52 @@ TOPICS_BY_ROLE_AND_GRADE: Dict[str, Dict[str, List[str]]] = {
             "Безопасность (XSS/CSRF)",
             "Микрофронтенды",
             "DX и стандарты"
+        ]
+    },
+"solution_architect": {
+        "Junior": [
+        "Роль Solution Architect",
+        "Основы системного дизайна",
+        "HTTP, API, интеграции",
+        "Базовые облачные концепции",
+        "Нефункциональные требования"
+    ],
+    "Middle": [
+        "Проектирование архитектуры решений",
+        "Event-driven и микросервисная архитектура",
+        "Безопасность и надёжность",
+        "Cloud architecture (AWS/Azure/GCP)",
+        "Trade-offs и технические компромиссы"
+    ],
+    "Senior": [
+        "Enterprise architecture",
+        "End-to-end системный дизайн",
+        "SLA/SLO и устойчивость",
+        "Cost optimization",
+        "Архитектурное лидерство и стратегия"
+    ]
+    },
+    "product_manager": {
+        "Junior": [
+            "Роль PM и базовые обязанности",
+            "Жизненный цикл продукта",
+            "Основы Agile и Scrum",
+            "Сбор требований и написание user stories",
+            "Основы UX/UI для PM"
+        ],
+        "Middle": [
+            "Приоритизация задач (MoSCoW, RICE)",
+            "Планирование спринтов и релизов",
+            "Анализ конкурентов",
+            "Метрики успеха продукта (KPI, OKR, DAU/MAU)",
+            "A/B тестирование и гипотезы"
+        ],
+        "Senior": [
+            "Стратегия продукта и vision",
+            "Управление портфелем продуктов",
+            "Масштабирование продукта и команды",
+            "Взаимодействие с C-level и стейкхолдерами",
+            "Инновации и долгосрочная стратегия"
         ]
     },
     "devops": {
